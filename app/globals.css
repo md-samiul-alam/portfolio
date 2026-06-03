@@ -155,3 +155,134 @@ body {
 .section-pad {
   @apply px-6 py-24 md:px-12 lg:px-20 lg:py-32;
 }
+
+/* Tiptap collaborative editor */
+.tiptap-editor {
+  caret-color: var(--foreground);
+}
+
+.tiptap-editor p {
+  margin: 0.5em 0;
+}
+
+.tiptap-editor p:first-child {
+  margin-top: 0;
+}
+
+.tiptap-editor p:last-child {
+  margin-bottom: 0;
+}
+
+.tiptap-editor h1,
+.tiptap-editor h2,
+.tiptap-editor h3 {
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0.75em 0 0.35em;
+}
+
+.tiptap-editor h1 {
+  font-size: 1.35rem;
+}
+
+.tiptap-editor h2 {
+  font-size: 1.15rem;
+}
+
+.tiptap-editor ul,
+.tiptap-editor ol {
+  margin: 0.5em 0;
+  padding-left: 1.25rem;
+}
+
+.tiptap-editor blockquote {
+  border-left: 3px solid var(--card-border);
+  margin: 0.5em 0;
+  padding-left: 0.85rem;
+  color: var(--muted);
+}
+
+.tiptap-editor code {
+  border-radius: 0.25rem;
+  background: var(--accent-subtle);
+  font-size: 0.85em;
+  padding: 0.1em 0.35em;
+}
+
+.tiptap-editor pre {
+  border-radius: 0.5rem;
+  background: color-mix(in oklab, var(--background) 70%, var(--foreground) 5%);
+  border: 1px solid var(--card-border);
+  margin: 0.5em 0;
+  overflow-x: auto;
+  padding: 0.65rem 0.85rem;
+}
+
+.tiptap-editor pre code {
+  background: none;
+  padding: 0;
+}
+
+.tiptap-editor:focus {
+  outline: none;
+}
+
+.tiptap p.is-editor-empty:first-child::before {
+  color: var(--muted);
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  pointer-events: none;
+}
+
+.tiptap .collaboration-carets__caret {
+  border-left: 1px solid currentcolor;
+  border-right: 1px solid currentcolor;
+  margin-left: -1px;
+  margin-right: -1px;
+  pointer-events: none;
+  position: relative;
+  word-break: normal;
+}
+
+.tiptap .collaboration-carets__label {
+  border-radius: 3px 3px 3px 0;
+  color: #fafafa;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 600;
+  left: -1px;
+  line-height: normal;
+  padding: 0.1rem 0.35rem;
+  position: absolute;
+  top: -1.35em;
+  user-select: none;
+  white-space: nowrap;
+  z-index: 10;
+}
+
+.tiptap .ProseMirror-yjs-cursor {
+  position: relative;
+  word-break: normal;
+  pointer-events: none;
+  margin-left: -1px;
+  margin-right: -1px;
+  border-left: 1px solid currentcolor;
+  border-right: 1px solid currentcolor;
+}
+
+.tiptap .ProseMirror-yjs-cursor > div {
+  border-radius: 3px 3px 3px 0;
+  color: #fafafa;
+  font-size: 11px;
+  font-weight: 600;
+  left: -1px;
+  line-height: normal;
+  padding: 0.1rem 0.35rem;
+  position: absolute;
+  top: -1.35em;
+  user-select: none;
+  white-space: nowrap;
+  z-index: 10;
+}

@@ -11,6 +11,12 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@tiptap/extension-collaboration": "^3.25.0",
+    "@tiptap/extension-collaboration-caret": "^3.25.0",
+    "@tiptap/pm": "^3.25.0",
+    "@tiptap/react": "^3.25.0",
+    "@tiptap/starter-kit": "^3.25.0",
+    "@tiptap/y-tiptap": "^3.0.4",
     "clsx": "^2.1.1",
     "framer-motion": "^12.40.0",
     "highcharts": "^12.6.0",
@@ -21,7 +27,9 @@
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-konva": "^19.2.4",
-    "simple-icons": "^16.22.0"
+    "simple-icons": "^16.22.0",
+    "y-websocket": "^3.0.0",
+    "yjs": "^13.6.31"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",
