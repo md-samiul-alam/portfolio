@@ -8,35 +8,46 @@ import { cn } from "@/lib/utils";
 
 const sectionIds = navLinks.map((l) => l.href.replace("#", ""));
 
+/** Offset from top of viewport when deciding which section is "active". */
+const SCROLL_SPY_OFFSET = 140;
+
+function resolveActiveSection() {
+  const scrollPosition = window.scrollY + SCROLL_SPY_OFFSET;
+  let current = sectionIds[0];
+
+  for (const id of sectionIds) {
+    const el = document.getElementById(id);
+    if (el && el.offsetTop <= scrollPosition) {
+      current = id;
+    }
+  }
+
+  const lastId = sectionIds[sectionIds.length - 1];
+  const lastEl = document.getElementById(lastId);
+  if (
+    lastEl &&
+    window.innerHeight + window.scrollY >=
+      document.documentElement.scrollHeight - 2
+  ) {
+    current = lastId;
+  }
+
+  return current;
+}
+
 export function Header() {
   const [activeSection, setActiveSection] = useState("intro");
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 24);
+      setActiveSection(resolveActiveSection());
+    };
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  useEffect(() => {
-    const observers = sectionIds.map((id) => {
-      const el = document.getElementById(id);
-      if (!el) return null;
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) setActiveSection(id);
-        },
-        { rootMargin: "-40% 0px -50% 0px", threshold: 0 },
-      );
-      observer.observe(el);
-      return observer;
-    });
-
-    return () => {
-      observers.forEach((o) => o?.disconnect());
-    };
   }, []);
 
   useEffect(() => {
