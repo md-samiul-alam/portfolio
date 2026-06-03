@@ -6,21 +6,33 @@ import { demosSection } from "@/data/portfolio";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import MaterialIcon from "@/components/MaterialIcon";
 
+const demoLoading = (label) => (
+  <div className="glass flex min-h-[320px] items-center justify-center rounded-2xl">
+    <span className="text-sm text-muted">{label}</span>
+  </div>
+);
+
 const HighchartsWeatherDemo = dynamic(
   () => import("@/components/demos/HighchartsWeatherDemo"),
   {
     ssr: false,
-    loading: () => (
-      <div className="glass flex min-h-[480px] items-center justify-center rounded-2xl">
-        <span className="text-sm text-muted">Loading chart…</span>
-      </div>
-    ),
+    loading: () => demoLoading("Loading chart…"),
   },
 );
 
+const KonvaRoomPlannerDemo = dynamic(
+  () => import("@/components/demos/KonvaRoomPlannerDemo"),
+  {
+    ssr: false,
+    loading: () => demoLoading("Loading room planner…"),
+  },
+);
+
+const SHIPPED_DEMOS = ["Highcharts.js", "Konva.js"];
+
 export function Demos() {
   const comingSoon = demosSection.planned.filter(
-    (lib) => lib !== "Highcharts.js",
+    (lib) => !SHIPPED_DEMOS.includes(lib),
   );
 
   return (
@@ -39,6 +51,15 @@ export function Demos() {
             transition={{ duration: 0.5 }}
           >
             <HighchartsWeatherDemo />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.5, delay: 0.05 }}
+          >
+            <KonvaRoomPlannerDemo />
           </motion.div>
 
           {comingSoon.length > 0 && (
