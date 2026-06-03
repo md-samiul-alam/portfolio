@@ -8,14 +8,18 @@ function ProjectBlock({ project }) {
   return (
     <div className="mb-4 rounded-xl border border-card-border bg-background/50 p-4">
       <p className="text-sm text-muted">
-        <a
-          href={project.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="font-semibold text-accent hover:text-foreground transition-colors"
-        >
-          {project.name}:
-        </a>{" "}
+        {project.url ? (
+          <a
+            href={project.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold text-accent hover:text-foreground transition-colors"
+          >
+            {project.name}:
+          </a>
+        ) : (
+          <span className="font-semibold text-foreground">{project.name}:</span>
+        )}{" "}
         {project.description}
       </p>
       {project.demoUrl && (
