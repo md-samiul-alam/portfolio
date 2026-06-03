@@ -16,9 +16,17 @@ export const navLinks = [
   { href: "#skills", label: "Skills" },
   { href: "#works", label: "Experience" },
   { href: "#projects", label: "Projects" },
+  { href: "#demos", label: "Demos" },
   { href: "#achievements", label: "Achievements" },
   { href: "#contact", label: "Contact" },
 ];
+
+export const demosSection = {
+  title: "Libraries in Action",
+  subtitle: "Interactive samples built with tools from my production work.",
+  status: "under_development",
+  planned: ["Highcharts.js", "Konva.js", "Yjs"],
+};
 
 export const hero = {
   pretitle: "Hello World",

@@ -1,0 +1,14 @@
+{
+  "watch": [
+    "app",
+    "components",
+    "lib",
+    "data",
+    "public",
+    "next.config.mjs",
+    "postcss.config.mjs"
+  ],
+  "ext": "js,jsx,mjs,css",
+  "ignore": ["out/**", ".next/**", "node_modules/**"],
+  "exec": "npm run build"
+}

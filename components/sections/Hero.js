@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { hero } from "@/data/portfolio";
-import MaterialIcon from "@/components/MaterialIcon";
 
 const container = {
   hidden: { opacity: 0 },
@@ -47,22 +46,6 @@ export function Hero() {
             ))}
           </motion.h1>
         </motion.div>
-
-        <motion.a
-          href="#about"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.2, duration: 0.5 }}
-          className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted transition-colors hover:text-foreground"
-          aria-label="Scroll to about section"
-        >
-          <span className="text-xs uppercase tracking-widest">Scroll</span>
-          <MaterialIcon
-            name="keyboard_arrow_down"
-            size={24}
-            className="animate-bounce"
-          />
-        </motion.a>
       </div>
     </section>
   );
