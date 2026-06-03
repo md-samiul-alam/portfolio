@@ -28,7 +28,15 @@ const KonvaRoomPlannerDemo = dynamic(
   },
 );
 
-const SHIPPED_DEMOS = ["Highcharts.js", "Konva.js"];
+const YjsTiptapDemo = dynamic(
+  () => import("@/components/demos/YjsTiptapDemo"),
+  {
+    ssr: false,
+    loading: () => demoLoading("Loading Yjs playground…"),
+  },
+);
+
+const SHIPPED_DEMOS = ["Highcharts.js", "Konva.js", "Yjs"];
 
 export function Demos() {
   const comingSoon = demosSection.planned.filter(
@@ -62,12 +70,21 @@ export function Demos() {
             <KonvaRoomPlannerDemo />
           </motion.div>
 
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
+            <YjsTiptapDemo />
+          </motion.div>
+
           {comingSoon.length > 0 && (
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.5, delay: 0.1 }}
+              transition={{ duration: 0.5, delay: 0.15 }}
               className="glass mx-auto flex max-w-2xl flex-col items-center rounded-2xl px-8 py-10 text-center"
             >
               <div className="flex h-12 w-12 items-center justify-center rounded-full border border-card-border bg-background/60">

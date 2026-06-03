@@ -243,7 +243,7 @@ export const featuredProjects = [
       "Built and maintained Docker Compose local environments mirroring production ECS workflows for consistent testing and deployment.",
       "Implemented real-time multi-user document synchronization with conflict resolution and persistent state for script and scene-planning data.",
       "Developed secure internal service communication using shared secrets and JWT-based authentication for server-to-server operations and document lifecycle management.",
-      "Authored technical documentation and Architecture Decision Records (ADRs) to standardize naming conventions and database management across the team.",
+      "Contributed to technical documentation and Architecture Decision Records (ADRs) to standardize naming conventions and database management across the team.",
     ],
   },
   {
