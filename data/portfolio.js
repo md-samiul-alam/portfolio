@@ -53,8 +53,9 @@ export const skillCategories = [
     label: "Front-end",
     items: [
       "Next.js",
-      "Angular",
       "React",
+      "Angular",
+      "Tiptap Editor",
       "Konva.js",
       "Babylon.js",
       "Highcharts.js",
@@ -121,10 +122,9 @@ export const experience = [
     ],
     projects: [
       {
-        name: "StoryArc",
-        url: "https://www.autodesk.com/",
+        name: "Research Prototype Software",
         description:
-          "Collaborative storytelling platform with real-time multi-user editing, 3D scene planning, and AI-assisted creative workflows.",
+          "Research prototype exploring real-time multi-user editing, cloud-backed persistence, and third-party AI API integration.",
       },
     ],
     highlights: ["Next.js", "Node.js", "AWS", "TypeScript"],
@@ -211,12 +211,11 @@ export const experience = [
 
 export const featuredProjects = [
   {
-    id: "storyarc",
-    name: "StoryArc",
+    id: "autodesk-research-prototype",
+    name: "Research Prototype Software",
     company: "Autodesk",
-    url: "https://www.autodesk.com/",
     description:
-      "Collaborative storytelling platform enabling teams to plan scripts and scenes with real-time editing, 3D scene capabilities, and AI-assisted creative workflows.",
+      "Research prototype — full-stack software exploring real-time multi-user editing, cloud-backed persistence, and third-party AI API integration. Built in a TypeScript monorepo for iterative R&D and deployed on AWS.",
     tools: [
       "Next.js",
       "Node.js",
@@ -231,19 +230,19 @@ export const featuredProjects = [
       "Gemini",
     ],
     domains: [
-      "Real-time collaboration systems",
-      "3D scene editing pipelines",
-      "AI-assisted creative tooling",
-      "Cloud-native application deployment",
+      "Research prototyping & iterative development",
+      "Real-time collaboration & CRDT sync",
+      "Cloud deployment for experimental systems",
+      "Database schema evolution & migrations",
     ],
     contributions: [
-      "Developed a collaborative storytelling platform in a monorepo, integrating a Next.js frontend with a Hocuspocus/Yjs backend for real-time synchronization.",
-      "Architected PostgreSQL persistence strategies with node-pg-migrate automated schema migrations to ensure seamless deployments and data integrity.",
-      "Integrated OpenAI and Gemini APIs for automated scene generation and vision analysis.",
-      "Built and maintained Docker Compose local environments mirroring production ECS workflows for consistent testing and deployment.",
-      "Implemented real-time multi-user document synchronization with conflict resolution and persistent state for script and scene-planning data.",
+      "Developed a research prototype for real-time collaborative editing in a monorepo, integrating a Next.js frontend with a Hocuspocus/Yjs backend for multi-user synchronization.",
+      "Architected PostgreSQL persistence strategies with node-pg-migrate automated schema migrations to support rapid iteration and reliable prototype deployments.",
+      "Integrated OpenAI and Gemini APIs to explore LLM and vision-based content workflows within the prototype.",
+      "Built Docker Compose environments for local development and AWS ECS deployment of the research stack.",
+      "Implemented real-time multi-user document synchronization with conflict resolution and durable persistence for structured document and metadata.",
       "Developed secure internal service communication using shared secrets and JWT-based authentication for server-to-server operations and document lifecycle management.",
-      "Contributed to technical documentation and Architecture Decision Records (ADRs) to standardize naming conventions and database management across the team.",
+      "Contributed to technical documentation and Architecture Decision Records (ADRs) to capture design rationale and conventions as the prototype evolved.",
     ],
   },
   {
